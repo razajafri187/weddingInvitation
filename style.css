@@ -1,0 +1,600 @@
+/* =================================
+   BASIC RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cormorant Garamond", serif;
+    background: #f8f3eb;
+    color: #3d3028;
+}
+
+
+/* =================================
+   DOOR SCREEN
+================================= */
+
+.door-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #201712;
+}
+
+
+/* Door panels */
+
+.door {
+    position: absolute;
+
+    top: 0;
+    width: 50%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3a2117,
+            #6b4029,
+            #3a2117
+        );
+
+    transition:
+        transform 2s cubic-bezier(.77,0,.18,1);
+}
+
+
+/* Left door */
+
+.door-left {
+    left: 0;
+
+    border-right: 3px solid #d4af37;
+}
+
+
+/* Right door */
+
+.door-right {
+    right: 0;
+
+    border-left: 3px solid #d4af37;
+}
+
+
+/* Door handles */
+
+.door-left::after,
+.door-right::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #d4af37;
+
+    box-shadow:
+        0 0 10px rgba(212,175,55,.7);
+}
+
+.door-left::after {
+    right: 30px;
+}
+
+.door-right::after {
+    left: 30px;
+}
+
+
+/* =================================
+   DOOR CONTENT
+================================= */
+
+.door-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    color: #fff;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.door-content h1 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(3rem, 8vw, 6rem);
+
+    color: #f2d58a;
+
+    margin: 20px 0;
+}
+
+.small-text {
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    font-size: 14px;
+}
+
+
+/* Open button */
+
+#openInvitation {
+
+    padding: 14px 32px;
+
+    border: 1px solid #d4af37;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#openInvitation:hover {
+
+    background: #d4af37;
+
+    color: #241811;
+}
+
+
+/* =================================
+   DOOR OPEN ANIMATION
+================================= */
+
+.door-screen.open .door-left {
+
+    transform: translateX(-100%);
+}
+
+.door-screen.open .door-right {
+
+    transform: translateX(100%);
+}
+
+.door-screen.open .door-content {
+
+    opacity: 0;
+
+    transform: scale(.8);
+}
+
+.door-screen.open {
+
+    pointer-events: none;
+
+    transition:
+        background 2s ease;
+
+    background: transparent;
+}
+
+
+/* =================================
+   INVITATION
+================================= */
+
+.invitation {
+
+    min-height: 100vh;
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
+
+    visibility: hidden;
+}
+
+.invitation.show {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding: 80px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf2,
+            #f2e6d5
+        );
+}
+
+.hero h1 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(4rem, 12vw, 8rem);
+
+    font-weight: 400;
+
+    color: #684535;
+
+    line-height: 1.1;
+}
+
+.couple-name span {
+
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 35px;
+
+    margin: 10px;
+}
+
+.date {
+
+    margin-top: 25px;
+
+    font-size: 22px;
+
+    letter-spacing: 3px;
+}
+
+.ornament {
+
+    margin: 25px;
+
+    font-size: 30px;
+
+    color: #b8953c;
+}
+
+
+/* =================================
+   SECTIONS
+================================= */
+
+section:not(.hero):not(.door-screen) {
+
+    padding: 90px 20px;
+
+    text-align: center;
+}
+
+section h2 {
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+    color: #684535;
+
+    margin-bottom: 40px;
+}
+
+
+/* =================================
+   EVENTS
+================================= */
+
+.events {
+
+    background: #fffaf3;
+}
+
+.event-container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.event-card {
+
+    padding: 40px 25px;
+
+    border: 1px solid #d9c6a8;
+
+    background: #fdf8f0;
+
+    transition: transform .3s;
+}
+
+.event-card:hover {
+
+    transform: translateY(-8px);
+}
+
+.event-card h3 {
+
+    font-size: 30px;
+
+    color: #684535;
+
+    margin-bottom: 20px;
+}
+
+.event-card p {
+
+    margin: 8px;
+
+    font-size: 18px;
+}
+
+
+/* =================================
+   COUNTDOWN
+================================= */
+
+.countdown-section {
+
+    background: #684535;
+
+    color: white;
+}
+
+.countdown-section h2 {
+
+    color: #f4d992;
+}
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.countdown div {
+
+    min-width: 100px;
+
+    padding: 20px;
+
+    border: 1px solid #d4af37;
+}
+
+.countdown span {
+
+    display: block;
+
+    font-size: 45px;
+}
+
+.countdown small {
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   MESSAGE
+================================= */
+
+.message {
+
+    background: #f8f0e5;
+}
+
+.message p {
+
+    max-width: 650px;
+
+    margin: 15px auto;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+}
+
+
+/* =================================
+   LOCATION
+================================= */
+
+.location {
+
+    background: #fffaf3;
+}
+
+.location h3 {
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.location p {
+
+    font-size: 19px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   BUTTONS
+================================= */
+
+.map-button,
+.rsvp-button {
+
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background: #684535;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.map-button:hover,
+.rsvp-button:hover {
+
+    background: #b8953c;
+}
+
+
+/* =================================
+   RSVP
+================================= */
+
+.rsvp {
+
+    background:
+        linear-gradient(
+            rgba(104,69,53,.9),
+            rgba(104,69,53,.9)
+        );
+
+    color: white;
+}
+
+.rsvp h2 {
+
+    color: #f4d992;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    background: #201712;
+
+    color: white;
+}
+
+footer h2 {
+
+    color: #f4d992;
+
+    margin: 15px 0;
+
+    font-family:
+        "Great Vibes",
+        cursive;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+    .event-container {
+
+        grid-template-columns: 1fr;
+    }
+
+    section h2 {
+
+        font-size: 45px;
+    }
+
+    .hero h1 {
+
+        font-size: 4rem;
+    }
+
+    .countdown {
+
+        gap: 10px;
+    }
+
+    .countdown div {
+
+        min-width: 75px;
+
+        padding: 15px 8px;
+    }
+
+    .countdown span {
+
+        font-size: 32px;
+    }
+
+}
