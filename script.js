@@ -28,82 +28,53 @@ openButton.addEventListener("click", () => {
 
 
 
-/* =================================
-   COUNTDOWN
-================================= */
+// ===============================
+// COUNTDOWN
+// ===============================
 
-const weddingDate =
-    new Date("December 20, 2026 20:00:00").getTime();
-
+const weddingDate = new Date("2026-10-07T19:00:00+05:00").getTime();
 
 function updateCountdown() {
 
     const now = new Date().getTime();
+    const distance = weddingDate - now;
 
-    const difference =
-        weddingDate - now;
-
-
-    if (difference <= 0) {
-
+    if (distance <= 0) {
         document.getElementById("days").textContent = "00";
         document.getElementById("hours").textContent = "00";
         document.getElementById("minutes").textContent = "00";
         document.getElementById("seconds").textContent = "00";
-
         return;
     }
 
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
 
-    const days =
-        Math.floor(
-            difference /
-            (1000 * 60 * 60 * 24)
-        );
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
 
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+    );
 
-    const hours =
-        Math.floor(
-            (difference /
-            (1000 * 60 * 60)) % 24
-        );
-
-
-    const minutes =
-        Math.floor(
-            (difference /
-            (1000 * 60)) % 60
-        );
-
-
-    const seconds =
-        Math.floor(
-            (difference / 1000) % 60
-        );
-
-
-    document.getElementById("days")
-        .textContent =
+    document.getElementById("days").textContent =
         String(days).padStart(2, "0");
 
-
-    document.getElementById("hours")
-        .textContent =
+    document.getElementById("hours").textContent =
         String(hours).padStart(2, "0");
 
-
-    document.getElementById("minutes")
-        .textContent =
+    document.getElementById("minutes").textContent =
         String(minutes).padStart(2, "0");
 
-
-    document.getElementById("seconds")
-        .textContent =
+    document.getElementById("seconds").textContent =
         String(seconds).padStart(2, "0");
-
 }
 
-
 updateCountdown();
-
 setInterval(updateCountdown, 1000);
