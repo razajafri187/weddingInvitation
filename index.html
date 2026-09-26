@@ -1,351 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Raza Hussain & Mahnoor Shahid | Wedding Invitation</title>
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
-          rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-
-<body>
-
+  <body>
     <!-- =========================================
          OPENING DOOR
     ========================================== -->
 
     <section class="door-screen" id="doorScreen">
+      <div class="door door-left"></div>
+      <div class="door door-right"></div>
 
-        <div class="door door-left"></div>
-        <div class="door door-right"></div>
+      <div class="door-content">
+        <p class="small-text">You are cordially invited</p>
 
-        <div class="door-content">
+        <h1>A Wedding Celebration</h1>
 
-            <p class="small-text">
-                You are cordially invited
-            </p>
-
-            <h1>
-                A Wedding Celebration
-            </h1>
-
-            <button id="openInvitation">
-                Open Invitation
-            </button>
-
-        </div>
-
+        <button id="openInvitation">Open Invitation</button>
+      </div>
     </section>
-
 
     <!-- =========================================
          MAIN INVITATION
     ========================================== -->
 
     <main class="invitation" id="invitation">
-
-
-        <!-- =====================================
+      <!-- =====================================
              HERO
         ====================================== -->
 
-        <h1 class="couple-name">
+      <h1 class="couple-name">
+        <span class="groom-name"> Raza Hussain </span>
 
-    <span class="groom-name">
-        Raza Hussain
-    </span>
+        <span class="ampersand"> & </span>
 
-    <span class="ampersand">
-        &
-    </span>
+        <span class="bride-name"> Mahnoor Shahid </span>
+      </h1>
 
-    <span class="bride-name">
-        Mahnoor Shahid
-    </span>
-
-</h1>
-
-
-        <!-- =====================================
+      <!-- =====================================
              WEDDING EVENTS
         ====================================== -->
 
-        <section class="events">
+      <section class="events">
+        <h2>Wedding Events</h2>
 
-            <h2>Wedding Events</h2>
+        <div class="event-container">
+          <!-- MEHNDI -->
 
-            <div class="event-container">
+          <div class="event-card">
+            <h3>Mehndi</h3>
 
+            <p>Wednesday, 07 October 2026</p>
 
-                <!-- MEHNDI -->
+            <p>7:00 PM</p>
 
-                <div class="event-card">
+            <p>Tiwana Palace, Gaggoo Mandi</p>
+          </div>
 
-                    <h3>Mehndi</h3>
+          <!-- BARAAT -->
 
-                    <p>
-                        Wednesday, 07 October 2026
-                    </p>
+          <div class="event-card">
+            <h3>Baraat</h3>
 
-                    <p>
-                        7:00 PM
-                    </p>
+            <p>Thursday, 08 October 2026</p>
 
-                    <p>
-                        Tiwana Palace, Gaggoo Mandi
-                    </p>
+            <p>12:00 PM</p>
 
-                </div>
+            <p>Le Grand Chalet Event Complex, Lahore</p>
+          </div>
 
+          <!-- WALIMA -->
 
-                <!-- BARAAT -->
+          <div class="event-card">
+            <h3>Walima</h3>
 
-                <div class="event-card">
+            <p>Friday, 09 October 2026</p>
 
-                    <h3>Baraat</h3>
+            <p>8:00 PM</p>
 
-                    <p>
-                        Thursday, 08 October 2026
-                    </p>
+            <p>Tiwana Palace, Gaggoo Mandi</p>
+          </div>
+        </div>
+      </section>
 
-                    <p>
-                        12:00 PM
-                    </p>
-
-                    <p>
-                        Le Grand Chalet Event Complex, Lahore
-                    </p>
-
-                </div>
-
-
-                <!-- WALIMA -->
-
-                <div class="event-card">
-
-                    <h3>Walima</h3>
-
-                    <p>
-                        Friday, 09 October 2026
-                    </p>
-
-                    <p>
-                        8:00 PM
-                    </p>
-
-                    <p>
-                        Tiwana Palace, Gaggoo Mandi
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================
+      <!-- =====================================
              COUNTDOWN
         ====================================== -->
 
-        <section class="countdown-section">
+      <section class="countdown-section">
+        <h2>Until We Say "I Do"</h2>
 
-            <h2>
-                Until We Say "I Do"
-            </h2>
+        <div class="countdown">
+          <div>
+            <span id="days">00</span>
+            <small>Days</small>
+          </div>
 
-            <div class="countdown">
+          <div>
+            <span id="hours">00</span>
+            <small>Hours</small>
+          </div>
 
-                <div>
-                    <span id="days">00</span>
-                    <small>Days</small>
-                </div>
+          <div>
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+          </div>
 
-                <div>
-                    <span id="hours">00</span>
-                    <small>Hours</small>
-                </div>
+          <div>
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+          </div>
+        </div>
+      </section>
 
-                <div>
-                    <span id="minutes">00</span>
-                    <small>Minutes</small>
-                </div>
-
-                <div>
-                    <span id="seconds">00</span>
-                    <small>Seconds</small>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================
+      <!-- =====================================
              SPECIAL MESSAGE
         ====================================== -->
 
-        <section class="message">
+      <section class="message">
+        <h2>A Special Day</h2>
 
-            <h2>
-                A Special Day
-            </h2>
+        <p>Two hearts, two families, and one beautiful beginning.</p>
 
-            <p>
-                Two hearts, two families,
-                and one beautiful beginning.
-            </p>
+        <p>Your presence will make our celebration even more special.</p>
+      </section>
 
-            <p>
-                Your presence will make our
-                celebration even more special.
-            </p>
-
-        </section>
-
-
-        <!-- =====================================
+      <!-- =====================================
              MEHNDI & WALIMA LOCATION
         ====================================== -->
 
-        <section class="location">
+      <section class="location">
+        <h2>Mehndi & Walima</h2>
 
-            <h2>
-                Mehndi & Walima
-            </h2>
+        <h3>Tiwana Palace</h3>
 
-            <h3>
-                Tiwana Palace
-            </h3>
+        <p>Gaggoo Mandi, Punjab, Pakistan</p>
 
-            <p>
-                Gaggoo Mandi, Punjab, Pakistan
-            </p>
-
-            <!--
+        <!--
                 Add the correct Tiwana Palace
                 Google Maps link here.
             -->
 
-            <a href="PUT_TIWANA_PALACE_GOOGLE_MAPS_LINK_HERE"
-               class="map-button"
-               target="_blank"
-               rel="noopener noreferrer">
+        <a
+          href="https://maps.app.goo.gl/jGCMCQm7SySAF8Jg6"
+          class="map-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Location
+        </a>
+      </section>
 
-                View Location
-
-            </a>
-
-        </section>
-
-
-        <!-- =====================================
+      <!-- =====================================
              BARAAT LOCATION
         ====================================== -->
 
-        <section class="location">
+      <section class="location">
+        <h2>Baraat</h2>
 
-            <h2>
-                Baraat
-            </h2>
+        <h3>Le Grand Chalet Event Complex</h3>
 
-            <h3>
-                Le Grand Chalet Event Complex
-            </h3>
+        <p>Lahore, Punjab, Pakistan</p>
 
-            <p>
-                Lahore, Punjab, Pakistan
-            </p>
+        <a
+          href="https://maps.app.goo.gl/bRdjHGb6JzBUaKu18"
+          class="map-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Location
+        </a>
+      </section>
 
-            <a href="https://share.google/sSRKKhGLWHNYh6wMw"
-               class="map-button"
-               target="_blank"
-               rel="noopener noreferrer">
+      <!-- =====================================
+     CONTACT / RSVP
+====================================== -->
 
-                View Location
+      <section class="rsvp">
+        <h2>We'd Love To See You</h2>
 
-            </a>
+        <p>
+          For any queries or to confirm your attendance, please feel free to
+          contact us.
+        </p>
 
-        </section>
+        <a
+          href="https://wa.me/923237775678?text=Assalam-o-Alaikum%2C%20I%20would%20like%20to%20confirm%20my%20attendance%20for%20Raza%20Hussain%20%26%20Mahnoor%20Shahid%27s%20wedding."
+          class="rsvp-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contact Us
+        </a>
+      </section>
 
-
-        <!-- =====================================
-             RSVP
-        ====================================== -->
-
-        <section class="rsvp">
-
-            <h2>
-                We Would Love To See You
-            </h2>
-
-            <p>
-                Please confirm your attendance.
-            </p>
-
-            <a href="#"
-               class="rsvp-button">
-
-                RSVP on WhatsApp
-
-            </a>
-
-        </section>
-
-
-        <!-- =====================================
+      <!-- =====================================
              FOOTER
         ====================================== -->
 
-        <footer>
+      <footer>
+        <p>With love,</p>
 
-            <p>
-                With love,
-            </p>
+        <h2>Raza Hussain & Mahnoor Shahid</h2>
 
-            <h2>
-                Raza Hussain & Mahnoor Shahid
-            </h2>
-
-            <p>
-                © 2026
-            </p>
-
-        </footer>
-
+        <p>© 2026</p>
+      </footer>
     </main>
-
 
     <!-- =========================================
          BACKGROUND MUSIC
     ========================================== -->
 
     <audio id="weddingMusic" loop>
-
-        <source src="music/wedding.mp3"
-                type="audio/mpeg">
-
+      <source src="music/wedding.mp3" type="audio/mpeg" />
     </audio>
-
 
     <!-- JavaScript -->
 
     <script src="script.js"></script>
-
-</body>
-
+  </body>
 </html>
 ```
