@@ -598,3 +598,28 @@ footer h2 {
     }
 
 }
+
+/* =================================
+   COUPLE NAME SIZING
+================================= */
+
+.couple-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.groom-name {
+    font-size: 1em;
+}
+
+.ampersand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 0.35em;
+    margin: 12px 0;
+}
+
+.bride-name {
+    font-size: 0.72em;
+}
