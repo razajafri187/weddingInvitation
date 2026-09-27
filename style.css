@@ -623,3 +623,12 @@ footer h2 {
 .bride-name {
     font-size: 0.72em;
 }
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
