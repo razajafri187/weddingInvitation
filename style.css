@@ -657,3 +657,37 @@ footer h2 {
 
     color: #684535;
 }
+
+/* =================================
+   CONTACT BUTTONS
+================================= */
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact-buttons .rsvp-button {
+    min-width: 220px;
+    text-align: center;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .contact-buttons {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .contact-buttons .rsvp-button {
+        width: min(85%, 300px);
+        min-width: unset;
+    }
+}
