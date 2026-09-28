@@ -691,3 +691,230 @@ footer h2 {
         min-width: unset;
     }
 }
+
+/* =================================
+   PREMIUM HERO
+================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+
+    padding: 80px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffdf8 0%,
+            #f8f0e4 70%,
+            #f1e4d3 100%
+        );
+}
+
+
+/* Decorative border */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 22px;
+
+    border: 1px solid rgba(184, 149, 60, 0.45);
+
+    pointer-events: none;
+}
+
+
+/* Inner decorative border */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 30px;
+
+    border: 1px solid rgba(184, 149, 60, 0.18);
+
+    pointer-events: none;
+}
+
+
+/* Top and bottom ornaments */
+
+.hero-ornament {
+    font-family: "Cormorant Garamond", serif;
+
+    color: #b8953c;
+
+    font-size: 34px;
+
+    line-height: 1;
+}
+
+.top-ornament {
+    margin-bottom: 20px;
+}
+
+.bottom-ornament {
+    margin-top: 30px;
+
+    transform: rotate(180deg);
+
+    opacity: 0.75;
+}
+
+
+/* Couple names */
+
+.couple-name {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "Great Vibes", cursive;
+
+    color: #684535;
+
+    line-height: 1;
+}
+
+.groom-name {
+    font-size: clamp(4rem, 9vw, 7rem);
+}
+
+.ampersand {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+
+    margin: 14px 0;
+}
+
+.bride-name {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+
+/* Divider */
+
+.hero-divider {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    width: min(350px, 70%);
+
+    margin: 30px 0 18px;
+}
+
+.hero-divider span {
+    height: 1px;
+
+    flex: 1;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #b8953c
+    );
+}
+
+.hero-divider span:last-child {
+    background: linear-gradient(
+        to left,
+        transparent,
+        #b8953c
+    );
+}
+
+.hero-divider b {
+    font-size: 13px;
+
+    font-weight: 400;
+
+    color: #b8953c;
+}
+
+
+/* Date */
+
+.hero .date {
+    margin: 0;
+
+    font-size: 21px;
+
+    letter-spacing: 4px;
+
+    color: #684535;
+}
+
+
+/* Invitation text */
+
+.invitation-text {
+    margin-top: 18px;
+
+    max-width: 600px;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    color: #684535;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero::before {
+        inset: 15px;
+    }
+
+    .hero::after {
+        inset: 21px;
+    }
+
+    .top-ornament {
+        margin-bottom: 15px;
+    }
+
+    .hero .date {
+        font-size: 18px;
+
+        letter-spacing: 3px;
+    }
+
+    .invitation-text {
+        font-size: 18px;
+    }
+
+    .hero-divider {
+        width: 75%;
+    }
+}
