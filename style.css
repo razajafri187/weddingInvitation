@@ -600,35 +600,60 @@ footer h2 {
 }
 
 /* =================================
-   COUPLE NAME SIZING
+   HERO / COUPLE NAMES
 ================================= */
 
 .couple-name {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    font-family: "Great Vibes", cursive;
+
+    color: #684535;
+
     line-height: 1;
 }
 
 .groom-name {
-    font-size: 1em;
+    font-size: clamp(4rem, 9vw, 7rem);
 }
 
 .ampersand {
     font-family: "Cormorant Garamond", serif;
-    font-size: 0.35em;
+
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+
     margin: 12px 0;
 }
 
 .bride-name {
-    font-size: 0.72em;
+    font-size: clamp(3rem, 7vw, 5.5rem);
 }
 
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 30px;
+.hero .date {
+    margin-top: 25px;
+
+    font-size: 22px;
+
+    letter-spacing: 3px;
+}
+
+.hero .ornament {
+    margin: 25px 0 15px;
+
+    font-size: 28px;
+
+    color: #b8953c;
+}
+
+.invitation-text {
+    margin-top: 10px;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    color: #684535;
 }
