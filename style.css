@@ -3,486 +3,413 @@
 ================================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Cormorant Garamond", serif;
-    background: #f8f3eb;
-    color: #3d3028;
+  font-family: "Cormorant Garamond", serif;
+  background: #f8f3eb;
+  color: #3d3028;
 }
-
 
 /* =================================
    DOOR SCREEN
 ================================= */
 
 .door-screen {
-    position: fixed;
-    inset: 0;
-
-    z-index: 1000;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-
-    background: #201712;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #201712;
 }
-
-
-/* Door panels */
 
 .door {
-    position: absolute;
-
-    top: 0;
-    width: 50%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #3a2117,
-            #6b4029,
-            #3a2117
-        );
-
-    transition:
-        transform 2s cubic-bezier(.77,0,.18,1);
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, #3a2117, #6b4029, #3a2117);
+  transition: transform 2s cubic-bezier(0.77, 0, 0.18, 1);
 }
-
-
-/* Left door */
 
 .door-left {
-    left: 0;
-
-    border-right: 3px solid #d4af37;
+  left: 0;
+  border-right: 3px solid #d4af37;
 }
-
-
-/* Right door */
 
 .door-right {
-    right: 0;
-
-    border-left: 3px solid #d4af37;
+  right: 0;
+  border-left: 3px solid #d4af37;
 }
 
-
 /* Door handles */
-
 .door-left::after,
 .door-right::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: 50%;
-
-    width: 18px;
-    height: 18px;
-
-    border-radius: 50%;
-
-    background: #d4af37;
-
-    box-shadow:
-        0 0 10px rgba(212,175,55,.7);
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
 }
 
 .door-left::after {
-    right: 30px;
+  right: 30px;
 }
 
 .door-right::after {
-    left: 30px;
+  left: 30px;
 }
-
 
 /* =================================
    DOOR CONTENT
 ================================= */
 
 .door-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    text-align: center;
-
-    color: #fff;
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  color: #fff;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .door-content h1 {
-
-    font-family: "Great Vibes", cursive;
-
-    font-size: clamp(3rem, 8vw, 6rem);
-
-    color: #f2d58a;
-
-    margin: 20px 0;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: #f2d58a;
+  margin: 20px 0;
 }
 
 .small-text {
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-
-    font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
-
-/* Open button */
-
 #openInvitation {
-
-    padding: 14px 32px;
-
-    border: 1px solid #d4af37;
-
-    background: transparent;
-
-    color: white;
-
-    font-family: inherit;
-
-    font-size: 18px;
-
-    cursor: pointer;
-
-    transition: .3s;
+  padding: 14px 32px;
+  border: 1px solid #d4af37;
+  background: transparent;
+  color: white;
+  font-family: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #openInvitation:hover {
-
-    background: #d4af37;
-
-    color: #241811;
+  background: #d4af37;
+  color: #241811;
 }
-
 
 /* =================================
    DOOR OPEN ANIMATION
 ================================= */
 
-.door-screen.open .door-left {
+.door-screen.open {
+  pointer-events: none;
+  background: transparent;
+  transition: background 2s ease;
+}
 
-    transform: translateX(-100%);
+.door-screen.open .door-left {
+  transform: translateX(-100%);
 }
 
 .door-screen.open .door-right {
-
-    transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .door-screen.open .door-content {
-
-    opacity: 0;
-
-    transform: scale(.8);
+  opacity: 0;
+  transform: scale(0.8);
 }
-
-.door-screen.open {
-
-    pointer-events: none;
-
-    transition:
-        background 2s ease;
-
-    background: transparent;
-}
-
 
 /* =================================
    INVITATION
 ================================= */
 
 .invitation {
-
-    min-height: 100vh;
-
-    opacity: 0;
-
-    transition: opacity 1.5s ease;
-
-    visibility: hidden;
+  min-height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.5s ease;
 }
 
 .invitation.show {
-
-    opacity: 1;
-
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
+/* =================================
+   SHARED SECTION STYLES
+================================= */
+
+section:not(.hero):not(.door-screen) {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 55px;
+  font-weight: 400;
+  color: #684535;
+  margin-bottom: 40px;
+}
 
 /* =================================
    HERO
 ================================= */
 
 .hero {
-
-    min-height: 100vh;
-
-    padding: 80px 20px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #fffaf2,
-            #f2e6d5
-        );
+  position: relative;
+  min-height: 100vh;
+  padding: 80px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at center,
+    #fffdf8 0%,
+    #f8f0e4 70%,
+    #f1e4d3 100%
+  );
 }
 
-.hero h1 {
-
-    font-family: "Great Vibes", cursive;
-
-    font-size: clamp(4rem, 12vw, 8rem);
-
-    font-weight: 400;
-
-    color: #684535;
-
-    line-height: 1.1;
+/* Decorative borders */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
 }
 
-.couple-name span {
-
-    display: block;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 35px;
-
-    margin: 10px;
+.hero::before {
+  inset: 22px;
+  border: 1px solid rgba(184, 149, 60, 0.45);
 }
 
-.date {
-
-    margin-top: 25px;
-
-    font-size: 22px;
-
-    letter-spacing: 3px;
+.hero::after {
+  inset: 30px;
+  border: 1px solid rgba(184, 149, 60, 0.18);
 }
 
-.ornament {
-
-    margin: 25px;
-
-    font-size: 30px;
-
-    color: #b8953c;
+/* Ornaments */
+.hero-ornament {
+  font-family: "Cormorant Garamond", serif;
+  color: #b8953c;
+  font-size: 34px;
+  line-height: 1;
 }
 
-
-/* =================================
-   SECTIONS
-================================= */
-
-section:not(.hero):not(.door-screen) {
-
-    padding: 90px 20px;
-
-    text-align: center;
+.top-ornament {
+  margin-bottom: 20px;
 }
 
-section h2 {
-
-    font-family: "Great Vibes", cursive;
-
-    font-size: 55px;
-
-    font-weight: 400;
-
-    color: #684535;
-
-    margin-bottom: 40px;
+.bottom-ornament {
+  margin-top: 30px;
+  transform: rotate(180deg);
+  opacity: 0.75;
 }
 
+/* Couple names */
+.couple-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Great Vibes", cursive;
+  color: #684535;
+  line-height: 1;
+}
+
+/* Space between the small intro text and the names (script swashes rise high) */
+.hero .small-text {
+  margin-bottom: 40px;
+}
+
+/* Groom name is intentionally larger than the bride name */
+.groom-name {
+  font-size: clamp(4rem, 9vw, 7rem);
+  padding-top: 0.15em; /* room for tall script ascenders like the "H" */
+}
+
+.ampersand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin: 14px 0;
+}
+
+.bride-name {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+/* Divider */
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(350px, 70%);
+  margin: 30px 0 18px;
+}
+
+.hero-divider span {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, transparent, #b8953c);
+}
+
+.hero-divider span:last-child {
+  background: linear-gradient(to left, transparent, #b8953c);
+}
+
+.hero-divider b {
+  font-size: 13px;
+  font-weight: 400;
+  color: #b8953c;
+}
+
+/* Date & text */
+.hero .date {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: 4px;
+  color: #684535;
+}
+
+.invitation-text {
+  margin-top: 18px;
+  max-width: 600px;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #684535;
+}
 
 /* =================================
    EVENTS
 ================================= */
 
 .events {
-
-    background: #fffaf3;
+  background: #fffaf3;
 }
 
 .event-container {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
 .event-card {
-
-    padding: 40px 25px;
-
-    border: 1px solid #d9c6a8;
-
-    background: #fdf8f0;
-
-    transition: transform .3s;
+  padding: 40px 25px;
+  border: 1px solid #d9c6a8;
+  background: #fdf8f0;
+  transition: transform 0.3s;
 }
 
 .event-card:hover {
-
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .event-card h3 {
-
-    font-size: 30px;
-
-    color: #684535;
-
-    margin-bottom: 20px;
+  font-size: 30px;
+  color: #684535;
+  margin-bottom: 20px;
 }
 
 .event-card p {
-
-    margin: 8px;
-
-    font-size: 18px;
+  margin: 8px;
+  font-size: 18px;
 }
-
 
 /* =================================
    COUNTDOWN
 ================================= */
 
 .countdown-section {
-
-    background: #684535;
-
-    color: white;
+  background: #684535;
+  color: white;
 }
 
 .countdown-section h2 {
-
-    color: #f4d992;
+  color: #f4d992;
 }
 
 .countdown {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 25px;
-
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .countdown div {
-
-    min-width: 100px;
-
-    padding: 20px;
-
-    border: 1px solid #d4af37;
+  min-width: 100px;
+  padding: 20px;
+  border: 1px solid #d4af37;
 }
 
 .countdown span {
-
-    display: block;
-
-    font-size: 45px;
+  display: block;
+  font-size: 45px;
 }
 
 .countdown small {
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
-
 
 /* =================================
    MESSAGE
 ================================= */
 
 .message {
-
-    background: #f8f0e5;
+  background: #f8f0e5;
 }
 
 .message p {
-
-    max-width: 650px;
-
-    margin: 15px auto;
-
-    font-size: 21px;
-
-    line-height: 1.7;
+  max-width: 650px;
+  margin: 15px auto;
+  font-size: 21px;
+  line-height: 1.7;
 }
-
 
 /* =================================
    LOCATION
 ================================= */
 
 .location {
-
-    background: #fffaf3;
+  background: #fffaf3;
 }
 
 .location h3 {
-
-    font-size: 32px;
-
-    margin-bottom: 10px;
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .location p {
-
-    font-size: 19px;
-
-    margin-bottom: 25px;
+  font-size: 19px;
+  margin-bottom: 25px;
 }
-
 
 /* =================================
    BUTTONS
@@ -490,431 +417,128 @@ section h2 {
 
 .map-button,
 .rsvp-button {
-
-    display: inline-block;
-
-    padding: 14px 30px;
-
-    background: #684535;
-
-    color: white;
-
-    text-decoration: none;
-
-    transition: .3s;
+  display: inline-block;
+  padding: 14px 30px;
+  background: #684535;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .map-button:hover,
 .rsvp-button:hover {
-
-    background: #b8953c;
+  background: #b8953c;
 }
 
-
 /* =================================
-   RSVP
+   RSVP / CONTACT
 ================================= */
 
 .rsvp {
-
-    background:
-        linear-gradient(
-            rgba(104,69,53,.9),
-            rgba(104,69,53,.9)
-        );
-
-    color: white;
+  background: linear-gradient(rgba(104, 69, 53, 0.9), rgba(104, 69, 53, 0.9));
+  color: white;
 }
 
 .rsvp h2 {
-
-    color: #f4d992;
+  color: #f4d992;
 }
 
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.contact-buttons .rsvp-button {
+  min-width: 220px;
+  text-align: center;
+}
 
 /* =================================
    FOOTER
 ================================= */
 
 footer {
-
-    padding: 60px 20px;
-
-    text-align: center;
-
-    background: #201712;
-
-    color: white;
+  padding: 60px 20px;
+  text-align: center;
+  background: #201712;
+  color: white;
 }
 
 footer h2 {
-
-    color: #f4d992;
-
-    margin: 15px 0;
-
-    font-family:
-        "Great Vibes",
-        cursive;
+  font-family: "Great Vibes", cursive;
+  color: #f4d992;
+  margin: 15px 0;
 }
-
 
 /* =================================
    MOBILE
 ================================= */
 
 @media (max-width: 700px) {
+  section h2 {
+    font-size: 45px;
+  }
 
-    .event-container {
+  /* Hero */
+  .hero {
+    padding: 70px 20px;
+  }
 
-        grid-template-columns: 1fr;
-    }
+  .hero::before {
+    inset: 15px;
+  }
 
-    section h2 {
+  .hero::after {
+    inset: 21px;
+  }
 
-        font-size: 45px;
-    }
+  .top-ornament {
+    margin-bottom: 15px;
+  }
 
-    .hero h1 {
-
-        font-size: 4rem;
-    }
-
-    .countdown {
-
-        gap: 10px;
-    }
-
-    .countdown div {
-
-        min-width: 75px;
-
-        padding: 15px 8px;
-    }
-
-    .countdown span {
-
-        font-size: 32px;
-    }
-
-}
-
-/* =================================
-   HERO / COUPLE NAMES
-================================= */
-
-.couple-name {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    font-family: "Great Vibes", cursive;
-
-    color: #684535;
-
-    line-height: 1;
-}
-
-.groom-name {
-    font-size: clamp(4rem, 9vw, 7rem);
-}
-
-.ampersand {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-
-    margin: 12px 0;
-}
-
-.bride-name {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-}
-
-.hero .date {
-    margin-top: 25px;
-
-    font-size: 22px;
-
+  .hero .date {
+    font-size: 18px;
     letter-spacing: 3px;
-}
+  }
 
-.hero .ornament {
-    margin: 25px 0 15px;
+  .invitation-text {
+    font-size: 18px;
+  }
 
-    font-size: 28px;
+  .hero-divider {
+    width: 75%;
+  }
 
-    color: #b8953c;
-}
+  /* Events */
+  .event-container {
+    grid-template-columns: 1fr;
+  }
 
-.invitation-text {
-    margin-top: 10px;
+  /* Countdown */
+  .countdown {
+    gap: 10px;
+  }
 
-    font-size: 20px;
+  .countdown div {
+    min-width: 75px;
+    padding: 15px 8px;
+  }
 
-    line-height: 1.7;
+  .countdown span {
+    font-size: 32px;
+  }
 
-    color: #684535;
-}
-
-/* =================================
-   CONTACT BUTTONS
-================================= */
-
-.contact-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.contact-buttons .rsvp-button {
-    min-width: 220px;
-    text-align: center;
-}
-
-
-/* Mobile */
-
-@media (max-width: 700px) {
-
-    .contact-buttons {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .contact-buttons .rsvp-button {
-        width: min(85%, 300px);
-        min-width: unset;
-    }
-}
-
-/* =================================
-   PREMIUM HERO
-================================= */
-
-.hero {
-    position: relative;
-    min-height: 100vh;
-
-    padding: 80px 25px;
-
-    display: flex;
+  /* Contact */
+  .contact-buttons {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #fffdf8 0%,
-            #f8f0e4 70%,
-            #f1e4d3 100%
-        );
-}
-
-
-/* Decorative border */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 22px;
-
-    border: 1px solid rgba(184, 149, 60, 0.45);
-
-    pointer-events: none;
-}
-
-
-/* Inner decorative border */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 30px;
-
-    border: 1px solid rgba(184, 149, 60, 0.18);
-
-    pointer-events: none;
-}
-
-
-/* Top and bottom ornaments */
-
-.hero-ornament {
-    font-family: "Cormorant Garamond", serif;
-
-    color: #b8953c;
-
-    font-size: 34px;
-
-    line-height: 1;
-}
-
-.top-ornament {
-    margin-bottom: 20px;
-}
-
-.bottom-ornament {
-    margin-top: 30px;
-
-    transform: rotate(180deg);
-
-    opacity: 0.75;
-}
-
-
-/* Couple names */
-
-.couple-name {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-family: "Great Vibes", cursive;
-
-    color: #684535;
-
-    line-height: 1;
-}
-
-.groom-name {
-    font-size: clamp(4rem, 9vw, 7rem);
-}
-
-.ampersand {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-
-    margin: 14px 0;
-}
-
-.bride-name {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-}
-
-
-/* Divider */
-
-.hero-divider {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    width: min(350px, 70%);
-
-    margin: 30px 0 18px;
-}
-
-.hero-divider span {
-    height: 1px;
-
-    flex: 1;
-
-    background: linear-gradient(
-        to right,
-        transparent,
-        #b8953c
-    );
-}
-
-.hero-divider span:last-child {
-    background: linear-gradient(
-        to left,
-        transparent,
-        #b8953c
-    );
-}
-
-.hero-divider b {
-    font-size: 13px;
-
-    font-weight: 400;
-
-    color: #b8953c;
-}
-
-
-/* Date */
-
-.hero .date {
-    margin: 0;
-
-    font-size: 21px;
-
-    letter-spacing: 4px;
-
-    color: #684535;
-}
-
-
-/* Invitation text */
-
-.invitation-text {
-    margin-top: 18px;
-
-    max-width: 600px;
-
-    font-size: 20px;
-
-    line-height: 1.7;
-
-    color: #684535;
-}
-
-
-/* Mobile */
-
-@media (max-width: 700px) {
-
-    .hero {
-        padding: 70px 20px;
-    }
-
-    .hero::before {
-        inset: 15px;
-    }
-
-    .hero::after {
-        inset: 21px;
-    }
-
-    .top-ornament {
-        margin-bottom: 15px;
-    }
-
-    .hero .date {
-        font-size: 18px;
-
-        letter-spacing: 3px;
-    }
-
-    .invitation-text {
-        font-size: 18px;
-    }
-
-    .hero-divider {
-        width: 75%;
-    }
+  }
+
+  .contact-buttons .rsvp-button {
+    width: min(85%, 300px);
+    min-width: unset;
+  }
 }
